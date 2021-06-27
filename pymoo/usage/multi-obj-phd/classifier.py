@@ -10,13 +10,13 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 
-from geneticalgorithm import geneticalgorithm as ga
+#from geneticalgorithm import geneticalgorithm as ga
 from pyitlib import discrete_random_variable as drv
 
-from leap_ec.simple import ea_solve
+#from leap_ec.simple import ea_solve
 
 def binaryClassifier():
-    dataset = pd.read_csv("experiments/data/adult.data2.csv")
+    dataset = pd.read_csv("pymoo/usage/multi-obj-phd/data/adult.data2.csv")
 
     # Check for Null Data
     dataset.isnull().sum()

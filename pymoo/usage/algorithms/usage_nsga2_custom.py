@@ -27,6 +27,7 @@ class MyProblem(Problem):
                 n_b += 1
 
         out["F"] = np.array([- n_a, - n_b], dtype=float)
+       
 
 
 class MySampling(Sampling):
@@ -36,7 +37,7 @@ class MySampling(Sampling):
 
         for i in range(n_samples):
             X[i, 0] = "".join([np.random.choice(problem.ALPHABET) for _ in range(problem.n_characters)])
-
+        print("population:",X)
         return X
 
 
@@ -75,7 +76,7 @@ class MyCrossover(Crossover):
 
             # join the character list and set the output
             Y[0, k, 0], Y[1, k, 0] = "".join(off_a), "".join(off_b)
-
+        print("crossover:",Y)
         return Y
 
 
@@ -87,7 +88,7 @@ class MyMutation(Mutation):
         for i in range(len(X)):
             if np.random.random() < 0.5:
                 X[i, 0] = "".join(np.array([e for e in X[i, 0]])[np.random.permutation(problem.n_characters)])
-
+        print(X)
         return X
 
 
